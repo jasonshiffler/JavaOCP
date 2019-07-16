@@ -22,11 +22,34 @@ enum Days{ SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY}
 enum Season {
 
     //note that the ; is needed in an enum if there is anything in the enum besides the value
-    SPRING("Mild"), SUMMER("Hot"), FALL("Mild"), WINTER("Cold");
+    //enum values can also contain methods
+    SPRING("Mild"){
+        public void printHours(){
 
+        }
+    },
+    SUMMER("Hot"){
+        public void printHours(){
+
+        }
+    },
+    FALL("Mild"){
+        public void printHours(){
+
+        }
+    },
+    WINTER("Cold"){
+        public void printHours(){
+
+        }
+    };
+
+
+    public abstract  void printHours();
   private String temp;
 
-  private Season(String temperature){
+  //This is the constructor for the enum
+  Season(String temperature){
       this.temp = temperature;
   }
 
