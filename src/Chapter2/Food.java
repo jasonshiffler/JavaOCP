@@ -9,7 +9,6 @@
  */
 
 
-
 package Chapter2;
 
 public abstract class Food {
@@ -62,12 +61,13 @@ class Pellets extends Food{
 
 /**
  * Factory Method to create food objects user tells us what type of animal they want to feed and we
- * return the right type of food. This class uses one static method so no object needs to be instantiated to use it
+ * return the right type of food. This class uses one static method so no object needs to be instantiated to use it.
+ * An exception is thrown if we're asked to return Food for an unsupported animal
  * */
 
 class FoodFactory{
 
-    public static Food getFood(String animalName){
+    public static Food getFood(String animalName) throws UnsupportedOperationException{
         switch(animalName){
             case "zebra":
                 return new Hay(100);
