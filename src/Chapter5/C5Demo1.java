@@ -4,6 +4,9 @@
  *
  * -ZonedDateTime
  * -Periods
+ * -Duration
+ * -ChronoUnit
+ * -Instant
  *
  * Uncomment purposefully inserted mistakes to see the compiler errors
  */
@@ -12,6 +15,8 @@ package Chapter5;
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
+
+import static java.lang.Thread.sleep;
 
 public class C5Demo1 {
 
@@ -99,6 +104,16 @@ public class C5Demo1 {
         LocalDate date4 =  LocalDate.now();
         Duration sixDays = Duration.ofDays(6);
         //System.out.println(date3.plus(sixDays)); //Fails because we can't add time to a date object
+
+        /**
+         * an Instant represents a sepcific moment in time in the GMT time zone
+         * */
+
+        Instant now1 = Instant.now();
+        System.out.println(now1);
+
+        Instant now2 = Instant.now();
+        System.out.println(now2);
 
 
     }
